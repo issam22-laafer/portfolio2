@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio</title>
+    <script
+      src="https://kit.fontawesome.com/dad8a5aed6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.0.min.js"></script>
+    <script src="js/jquery.fullpage.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#name").keyup(function(){
+           regname = /^[a-zA-z][^0-9]{4,}$/; 
+           nname = $("#name").val();
+           nametest = regname.test(nname);
+          if(nametest == false){
+            $("#name").css("color","red");
+            $("#spanname").html("name must be only letters (greater then 4 letters)");
+            $("#spanname").css("color","#ff004f");
+            $("#spanname").css("text-transform","uppercase");
+          }else{;
+            $("#name").css("color","white");
+            $("#spanname").html(" name is Valid");
+            $("#spanname").css("color","white");
+            $("#spanname").css("text-transform","uppercase");
+          }
+        })
+
+        $("#email").keyup(function(){
+           regemail = /^[a-zA-z]{4,10}[0-9]{1,4}@gmail.(com|net)$/; 
+           email = $("#email").val();
+           emailtest = regemail.test(email);
+          if(emailtest == false){
+            $("#email").css("color","red");
+            $("#spanemail").html("email must be like this ([a-zA-z]{4,10}[0-9]{1,4}@gmail.(com|net))");
+            $("#spanemail").css("color","#ff004f");
+            $("#spanemail").css("text-transform","uppercase");
+          }else{;
+            $("#email").css("color","white");
+            $("#spanemail").html("email is Valid");
+            $("#spanemail").css("color","white");
+            $("#spanemail").css("text-transform","uppercase");
+          }
+        })
+
+
+        $("#phone").keyup(function(){
+           regphone = /^06[0-9]{8}$/; 
+           phone = $("#phone").val();
+           phonetest = regphone.test(phone);
+          if(phonetest == false){
+            $("#phone").css("color","red");
+            $("#spanphone").html("phone number must be  only 10 numbers starting with 06");
+            $("#spanphone").css("color","#ff004f");
+            $("#spanphone").css("text-transform","uppercase");
+          }else{;
+            $("#phone").css("color","white");
+            $("#spanphone").html(" phone number is Valid");
+            $("#spanphone").css("color","white");
+            $("#spanphone").css("text-transform","uppercase");
+          }
+        })
+
+        $("#message").keyup(function(){
+           regmessage = /[0-9a-zA-Z]{1,}/ig; 
+           message = $("#message").val();
+           messagetest = regmessage.test(message);
+          if(messagetest == false){
+            $("#message").css("color","red");
+            $("#spanmessage").html("your message must be greater then 1 letters");
+            $("#spanmessage").css("color","#ff004f");
+            $("#spanmessage").css("text-transform","uppercase");
+          }else{;
+            $("#message").css("color","white");
+            $("#spanmessage").html("message is Valid");
+            $("#spanmessage").css("color","white");
+            $("#spanmessage").css("text-transform","uppercase");
+          }
+        })
+        $("#submit").click(function () {
+          if(messagetest==true && phonetest==true && nametest==true && emailtest==true){
+                  $("#submit").attr("type","submit");
+                  
+                }
+                else{
+                  $("#submit").removeAttr("submit");
+                }
+      })
+      $("input[type=text],input[type=email], textarea").val("");
+            
+          })
+    </script>
+    
+    <link rel="stylesheet" href="css/portfolio.css" />
+  </head>
+  <body>
+    <nav>
+      
+      <input type="checkbox" id="check" class="chekh" />
+      <label for="check" class="checkbtn" class="chekh">
+        <i id="bares" class="fas fa-bars" class="chekh"></i>
+      </label>
+      <ul>
+        <li id="logo"><div class="logo">ISSAM.DEV</div></li>
+      </ul>
+      <ul id="nav_links">
+        <li><a href="" class="">home</a></li>
+        <li><a href="#about_me">about me</a></li>
+        <li><a href="#services">services</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#team">team</a></li>
+        <li><a href="#contact">conact me</a></li>
+        <li></li>
+      </ul>
+      <ul id="fonts">
+        <li>
+          <a href="https://discord.com" target="_blank"
+            ><i class="fa-brands fa-discord"></i
+          ></a>
+        </li>
+        <li>
+          <a target=""> <i class="fab fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="mailto:issamlaafer509@gmail.com"><i class="fas fa-envelope"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa-brands fa-github"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <div id="">
+      <section id="about">
+        <div id="about_container">
+          <div class="text">
+            Hello , I'm a <br />
+            <span class="typing"></span>
+          </div>
+          <!-- <div id="mypect"><img  id="mypicture" src="../pictures/WhatsApp Image 2021-10-27 at 19.31.00.jpeg" alt=""></div> -->
+          <div class="box">
+            <div class="content">
+              <img
+                src="../pictures/WhatsApp Image 2021-10-27 at 19.31.00.jpeg"
+                alt=""
+              />
+              <h2>
+                Issam Laafar <br />
+                <span>Developer</span>
+              </h2>
+              <a href="" download> Download cv</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about_me">
+        <div class="abou_me_container">
+          <div class="row">
+            <div class="about-col-1">
+              <img
+                src="../pictures/WhatsApp Image 2022-07-16 at 12.34.08.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="about-col-2">
+              <h1 data-text="About Me" class="sub-title">About Me</h1>
+              <p>
+                Hello ! my name is Issam Laafar , I'm from morocco , I'm 19
+                years old,I'm a developer , I specialize in creating websites.
+                <br />Want to work together? I’d love to hear from you.
+              </p>
+              <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">
+                  Skills
+                </p>
+                <p class="tab-links" onclick="opentab('languages')">
+                  Languages
+                </p>
+                <p class="tab-links" onclick="opentab('education')">
+                  Education
+                </p>
+              </div>
+              <div class="tab-contents avtive-tab" id="skills">
+                <ul>
+                  <li><span>UI/UX</span><br />Designing Web interfaces</li>
+                  <li><span>Web Development</span><br />Web App development</li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="languages">
+                <ul>
+                  <div class="languages">
+                    <li>
+                      <h3>HTML5</h3>
+                      <span class="bar"><span class="html"></span></span>
+                    </li>
+                    <li>
+                      <h3>CSS3</h3>
+                      <span class="bar"><span class="CSS3"></span></span>
+                    </li>
+                    <li>
+                      <h3>JAVASCRIPT</h3>
+                      <span class="bar"><span class="JAVASCRIPT"></span></span>
+                    </li>
+                    <li>
+                      <h3>jQuery</h3>
+                      <span class="bar"><span class="jQuery"></span></span>
+                    </li>
+                    <li>
+                      <h3>PHP</h3>
+                      <span class="bar"><span class="PHP"></span></span>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+              <div class="tab-contents" id="education">
+                <ul>
+                  <li>
+                    <span>2020</span><br />Bachelor's degree majoring in
+                    physical siences
+                  </li>
+                  <li><span>2022-2024</span><br />Technologist specializing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- services_______________________ -->
+      <section id="services">
+        <div class="container">
+          <h1 class="services-title">My Serivces</h1>
+          <div class="services-list">
+            <div>
+              <i class="fa-solid fa-code"></i>
+              <h2>Web Design</h2>
+              <p>Web App development</p>
+              <a href="">Learn more</a>
+            </div>
+            <div>
+              <i class="fa-solid fa-crop"></i>
+              <h2>UI/UX</h2>
+              <p>Designing Web interfaces</p>
+              <a href="">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projeects" id="projects">
+        <h2 class="title">Projects</h2>
+        <div class="container-projects">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="../pictures/project1.png" />
+            </div>
+            <div class="project-info">
+              <p class="project-category">Learning howe to create websites</p>
+              <strong class="project-title">
+                <span>First Website</span>
+                <a href="#" class="more-details">More details</a>
+              </strong>
+            </div>
+          </div>
+
+          <!-- __________ -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="../pictures/project2.png" />
+            </div>
+            <div class="project-info">
+              <p class="project-category">Making an iframe website</p>
+              <strong class="project-title">
+                <span>IFrame</span>
+                <a href="#" class="more-details">More details</a>
+              </strong>
+            </div>
+          </div>
+
+          <!-- _________________ -->
+          <!-- __________ -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="../pictures/project3.png" />
+            </div>
+            <div class="project-info">
+              <p class="project-category">Technologis</p>
+              <strong class="project-title">
+                <span>Issam Tech</span>
+                <a href="#" class="more-details">More details</a>
+              </strong>
+            </div>
+          </div>
+          <!-- __________ -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="../pictures/project4.png" />
+            </div>
+            <div class="project-info">
+              <p class="project-category">Just testing</p>
+              <strong class="project-title">
+                <span>Space</span>
+                <a href="#" class="more-details">More details</a>
+              </strong>
+            </div>
+          </div>
+          <!-- __________ -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="../pictures/project5.png" />
+            </div>
+            <div class="project-info">
+              <p class="project-category">School Library</p>
+              <strong class="project-title">
+                <span>Library</span>
+                <a href="#" class="more-details">More details</a>
+              </strong>
+            </div>
+          </div>
+          <!-- __________ -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="../pictures/project6.png" />
+            </div>
+            <div class="project-info">
+              <p class="project-category">Shoping Store</p>
+              <strong class="project-title">
+                <span>Issam Store</span>
+                <a href="#" class="more-details">More details</a>
+              </strong>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- _______________________team__________________________________ -->
+      <section id="team">
+        <div>
+          <h1 class="team-name">
+            5 guys-<i class="fa-solid fa-trademark"></i>
+          </h1>
+        </div>
+        <div class="row-team">
+          <!-- Column 1-->
+          <div class="column">
+            <div class="card">
+              <div class="img-container">
+                <img
+                  src="../pictures/WhatsApp Image 2021-10-27 at 19.31.00.jpeg"
+                />
+              </div>
+              <h3>Issam Laafar</h3>
+              <p>Full stack developer</p>
+              <div class="icons">
+                <a href="#">
+                  <i class="fa-brands fa-discord"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Column 2-->
+          <div class="column">
+            <div class="card">
+              <div class="img-container">
+                <img src="../pictures/IMG_20220603_142613_393.jpg" />
+              </div>
+              <h3>Siham Samira</h3>
+              <p>Full stack developer</p>
+              <div class="icons">
+                <a href="#">
+                  <i class="fa-brands fa-discord"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Column 3-->
+          <div class="column">
+            <div class="card">
+              <div class="img-container">
+                <img
+                  src="../pictures/WhatsApp Image 2022-07-17 at 20.49.38.jpeg"
+                />
+              </div>
+              <h3>Youssef Jabri</h3>
+              <p>Full stack developer</p>
+              <div class="icons">
+                <a href="#">
+                  <i class="fa-brands fa-discord"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Column 4-->
+          <div class="column">
+            <div class="card">
+              <div class="img-container">
+                <img src="../pictures/moi.jpeg" />
+              </div>
+              <h3>Iliass Elaabd</h3>
+              <p>Full stack developer</p>
+              <div class="icons">
+                <a href="#">
+                  <i class="fa-brands fa-discord"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Column 5-->
+          <div class="column">
+            <div class="card">
+              <div class="img-container">
+                <img src="../pictures/téléchargé.png" />
+              </div>
+              <h3>Haytam Rais</h3>
+              <p>Full stack developer</p>
+              <div class="icons">
+                <a href="#">
+                  <i class="fa-brands fa-discord"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ____________contact___________________ -->
+      <section id="contact">
+        <div class="contact-container">
+          <div class="row-contact">
+            <div class="contact-left">
+              <h1 class="contact-title">Contact Me</h1>
+              <p><i class="fa-solid fa-paper-plane"></i> issamlaafer588@gmail.com</p>
+              <p><i class="fa-solid fa-phone"></i> 0600000000</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-discord"></i></i></a>
+              </div>
+              <div>
+                <a href="" download class="dwnld-cv">Download CV</a>
+              </div>
+             
+            </div>
+            <div class="contact-right">
+              <form  action="https://formspree.io/f/mrgjvndz" method="POST">
+                <span  id="spanname"></span><br><input pattern="^[a-zA-z][^0-9]{4,}$" id="name" type="text" name="name" placeholder="Your Name" required>
+                <span id="spanemail"></span><br><input pattern="^[a-zA-z]{4,10}[0-9]{1,4}@gmail.(com|net)$" id="email" type="email" name="email" placeholder="Your Email" required>
+                <span id="spanphone"></span><br><input pattern="^06[0-9]{8}$" id="phone" id="phone" type="text" name="phone" placeholder="Your phone Number" required>
+                <span id="spanmessage"></span><br><textarea  id="message" name="message" id="" rows="6" placeholder="Your Message" required pattern="[0-9a-zA-Z]{5,}/ig" ></textarea>
+                <!-- <button class="dwnld-cv" id="submit" type="submit" disabled >Send Message</button> -->
+                <input type="button" value="Send Message" id="submit" class="dwnld-cv">
+                <input type="reset" value="reset" class="dwnld-cv"" >
+              </form>
+            </div>
+          </div>
+          <div class="copy-right">
+            <p>copyright © Laafar Issam. Made with <i class="fa-solid fa-heart"></i>By Issam Laafar   2000 2022</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ___________________barre_____________________ -->
+    <div id="barre"></div>
+    <div class="scrolltop" onclick="scrollToTop()"><i class="fa-solid fa-angles-up"></i></div>
+    <script>
+      // const scriptURL = 'https://script.google.com/macros/s/AKfycbzFyES9V0w0e87EgCZiEG-9oGeXvu-QvP9Ibdbehqggirk_KdTWQAiq2_WwldlUO3ykcA/exec';
+      // const form = document.forms['submit-to-google-sheet'];
+    
+      // form.addEventListener('submit', e => {
+      //   e.preventDefault()
+      //   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      //     .then(response => console.log('Success!', response))
+      //     .catch(error => console.error('Error!', error.message))
+      // })
+    </script>
+  </body>
+</html>
